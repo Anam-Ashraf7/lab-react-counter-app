@@ -1,0 +1,36 @@
+* {
+  background-color: white;
+}
+
+#root {
+  width: 100%;
+}
+
+#title{
+  color: black;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#count {
+  color: red;
+}
+
+.btn {
+  padding: 10px 30px;
+  margin: 10px;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  transition: none;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
