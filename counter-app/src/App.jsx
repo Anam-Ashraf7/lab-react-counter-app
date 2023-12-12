@@ -1,41 +1,52 @@
-import { useState } from 'react'
-import './App.css'
+import { Component } from 'react'
+import "./App.css"
 
-function App() {
-  let [count, setCount] = useState(0)
+export default class App extends Component {
 
-  function IncreaseCount() {
-    setCount((count) => count + 1)
+
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      count:0
+    }
   }
 
-  function DecreaseCount() {
-    setCount((count) =>  count - 1)
+  increaseCount = () => {
+    this.setState({count:this.state.count + 1})
   }
 
-  function Reset() {
-    setCount(count = 0)
+  DecreaseCount = () => {
+    this.setState({count:this.state.count - 1})
   }
 
-  return (
-    <>
-      
-      <h1 id='title'>Counter App</h1>
-      <div className="card">
-        <h1 id='count'>{count}</h1>
-        <div>
-        <button className='btn' onClick={IncreaseCount}>
-          + 1
-        </button>
-        <button className='btn' onClick={DecreaseCount}>
-          - 1
-        </button>
-        <button className='btn' onClick={Reset}>
-          Reset
-        </button>
+  Reset = () => {
+    this.setState({count: 0})
+  }
+
+
+
+  render() {
+
+    return (
+      <>
+        <h1 id='title'>Counter App</h1>
+        <div className="card">
+          <h1 id='count'>{this.state.count}</h1>
+          <div>
+          <button className='btn' onClick={this.increaseCount}>
+            + 1
+          </button>
+          <button className='btn' onClick={this.DecreaseCount}>
+            - 1
+          </button>
+          <button className='btn' onClick={this.Reset}>
+            Reset
+          </button>
+          </div>
         </div>
-      </div>
-    </>
-  )
+        
+      </>
+    )
+  }
 }
-
-export default App
